@@ -26,7 +26,7 @@ public class UserController {
         userService.save(user);
     }
     @GetMapping("/login")
-    public User login(@RequestParam String username, @RequestParam String password) throws LoginFailedException {
+    public User login(@RequestParam String username, @RequestParam String password) throws Exception {
         return userService.login(username, password);
     }
 }
