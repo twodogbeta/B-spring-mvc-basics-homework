@@ -1,5 +1,6 @@
 package com.thoughtworks.capacity.gtb.mvc.api;
 
+import com.thoughtworks.capacity.gtb.mvc.Exception.UserRepetitionException;
 import com.thoughtworks.capacity.gtb.mvc.domain.User;
 import com.thoughtworks.capacity.gtb.mvc.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,6 +9,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
+
+import javax.validation.Valid;
 
 @RestController
 public class UserController {
@@ -20,7 +23,7 @@ public class UserController {
 
     @PostMapping("/register")
     @ResponseStatus(HttpStatus.CREATED)
-    public void registerUser(@RequestBody User user) {
+    public void registerUser(@RequestBody @Valid User user) throws UserRepetitionException {
         userService.save(user);
     }
 }
