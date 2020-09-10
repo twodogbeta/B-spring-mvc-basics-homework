@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 @ControllerAdvice
 public class GlobalExceptionHandler {
 
-    @ExceptionHandler(UserRepetitionException.class)
+    @ExceptionHandler({UserRepetitionException.class,LoginFailedException.class})
     public ResponseEntity userAlreadyExistsError(Exception ex) {
         return ResponseEntity.badRequest().body(ex.getMessage());
     }
