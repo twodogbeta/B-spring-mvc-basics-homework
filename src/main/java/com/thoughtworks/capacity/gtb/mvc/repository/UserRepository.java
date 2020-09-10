@@ -23,7 +23,7 @@ public class UserRepository {
     }
     public Optional<User> findUserByUsername(String username) {
         for (User user : this.userList) {
-            if (user.getName().equals(username)) {
+            if (user.getUsername().equals(username)) {
                 return Optional.of(user);
             }
         }
