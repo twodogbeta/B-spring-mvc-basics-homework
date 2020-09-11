@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 
 @ControllerAdvice
 public class GlobalExceptionHandler {
-
     @ExceptionHandler({UserRepetitionException.class,LoginFailedException.class, MethodArgumentNotValidException.class})
     public ResponseEntity invalidParameter(Exception ex) {
         CommonError commonError = new CommonError(HttpStatus.BAD_REQUEST.value(),ex.getMessage());

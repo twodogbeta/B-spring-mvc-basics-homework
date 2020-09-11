@@ -4,8 +4,6 @@ import com.thoughtworks.capacity.gtb.mvc.Exception.LoginFailedException;
 import com.thoughtworks.capacity.gtb.mvc.Exception.UserRepetitionException;
 import com.thoughtworks.capacity.gtb.mvc.domain.User;
 import com.thoughtworks.capacity.gtb.mvc.service.UserService;
-import javafx.fxml.LoadException;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 

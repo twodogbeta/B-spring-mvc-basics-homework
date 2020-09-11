@@ -18,13 +18,16 @@ public class UserRepository {
         userList.add(user);
         return user;
     }
+
     public List<User> findAll() {
+
         return this.userList;
     }
+
     public Optional<User> findUserByUsername(String username) {
         for (User user : this.userList) {
             if (user.getUsername().equals(username)) {
-                return Optional.of(user);
+                return Optional.ofNullable(user);
             }
         }
         return Optional.empty();

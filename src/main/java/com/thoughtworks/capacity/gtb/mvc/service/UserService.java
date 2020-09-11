@@ -37,7 +37,7 @@ public class UserService {
             if (isCorrectPassword(user.get(), password)) return user.get();
             throw new LoginFailedException("用户名或密码错误！");
         }
-        throw new UserNotFoundException("用户不存在");
+        throw new UserNotFoundException("用户不存在！");
     }
 
     public boolean isCorrectPassword(User user, String password) {
